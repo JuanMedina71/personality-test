@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "insightiq-8a302": {
+      "hosting": {
+        "personality-test": [
+          "insightiq-8a302"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "insightiq-8a302"
+  }
+}

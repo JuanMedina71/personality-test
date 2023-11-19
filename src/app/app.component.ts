@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'personality-test';
+  constructor() {
+  }
+  isShowDivIf = true; 
+  
+  toggleDisplayDivIf(){
+    this.isShowDivIf = !this.isShowDivIf;
+  }
+  ngOnInit(): void {
+    
+    
+  }
+
+
 }
