@@ -26,5 +26,16 @@
   .example-button-row .mat-mdc-button-base {
     margin: 8px 8px 8px 0;
   }
+
+  .register-option {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
   
+  .login-admin {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
   

@@ -1,0 +1,41 @@
+
+
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+  }
+  
+  .login-card {
+    max-width: 400px; /* Ajusta el ancho máximo según tus necesidades */
+    width: 100%;
+  }
+  
+  /* Opcional: Ajusta el estilo del formulario */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .example-button-row {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+  }
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+
+  .register-option {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .register-admin {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  
