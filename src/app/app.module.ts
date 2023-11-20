@@ -24,6 +24,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TestComponent } from './components/test/test.component';
 import { VarkComponent } from './components/vark/vark.component';
+import { VerificationComponent } from './components/verification/verification.component';
+import { PublicComponent } from './components/public/public.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { VarkComponent } from './components/vark/vark.component';
     TestComponent,
     NavbarComponent,
     RegisterComponent,
+    VerificationComponent,
+    PublicComponent,
     
   ],
   imports: [

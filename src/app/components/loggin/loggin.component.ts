@@ -31,9 +31,16 @@ export class LogginComponent implements OnInit {
     if (this.loginForm.valid) {
       const { email, password} = this.loginForm.value;
 
-      this.connectionDBService.login({email, password}).then(() => {
+      this.connectionDBService.login({email, password}).then((userCredential) => {
+        const user = userCredential.user;
+        if(user && user.emailVerified) {        
         Swal.fire('Exito', 'Inicio de sesion exitoso', 'success');
-        this.router.navigate(['/register']);
+          this.router.navigate(['/register']);          
+        }else if (user && !user.emailVerified) {
+          this.router.navigate(['/verification']);          
+        } else {
+          Swal.fire('Error', 'Ha ocurrido un error durante el inicio de sesión en cuanto a verificación', 'error');
+        }
       }).catch((error) => {
         if(error.code === 'auth/user-not-found') {
           Swal.fire('Error', 'No se encontró una cuenta con este correo electrónico', 'error');

@@ -1,0 +1,57 @@
+.public-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 20px;
+  }
+  
+  .public-card {
+    width: 250px;
+    height: 150px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ddd; 
+  }
+  
+  .public-card:hover {
+    transform: scale(1.1);
+  }
+  
+  .public-card.card-admin {
+    background-image: url('https://mijobrands.com/wp-content/uploads/2019/04/Imagen-blog-12-de-abril.png');
+  }
+  .public-card.card-vark {
+    background-image: url('https://static.wixstatic.com/media/a8372c_77ed53b4572943cc9fdaff8241e9f057~mv2.jpg/v1/fill/w_459,h_613,al_c,lg_1,q_80/a8372c_77ed53b4572943cc9fdaff8241e9f057~mv2.jpg');
+  }
+  .public-card.card-jung {
+    background-image: url('https://www.enae.es/sites/default/files/imagen-blog/Gestione%20con%20%C3%A9xito%20a%20sus%20clientes_900x500br.jpg');
+  }
+
+  .admin-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    -webkit-text-stroke: 1px black;
+    padding: 15px;
+  }
+
+
+
+  @media (max-width: 768px) {
+    .public-container {
+      flex-direction: column;  /* Cambia a apilamiento vertical en pantallas más pequeñas */
+    }
+
+
+    .public-card {
+      margin: 10px 0;  /* Espaciado vertical entre tarjetas en pantallas más pequeñas */
+    }
+  }
+  
