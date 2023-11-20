@@ -1,10 +1,137 @@
-<h1>Bienvenido al test VARK</h1>
+<form [formGroup]="form">
+  <h1>Bienvenido al test VARK</h1>
 
-<p>Instrucciones: Seleccione la opcion de la respuesta que mejor explica su preferencia,
-  seleccione más de una respuesta si una sola no encaja con su percepción. Deje en blanco
-  toda pregunta que no se aplique.</p>
+  <p>Instrucciones: Seleccione la opcion de la respuesta que mejor explica su preferencia,
+    seleccione más de una respuesta si una sola no encaja con su percepción. Deje en blanco
+    toda pregunta que no se aplique.</p>
 
-  <label for="pregunta1">Usted cocinará algo especial para su familia. Usted haría:</label>
+    <div name="pregunta1">
+      <h3>1. Usted cocinará algo especial para su familia. Usted haría:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta1', 'a1')" formControlName="a1" id="a1" value="a1">a) Preguntar a amigos por sugerencias.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta1', 'b1')" formControlName="b1" id="b1" value="b1">b) Dar una vista al recetario por ideas de las fotos.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta1', 'c1')" formControlName="c1" id="c1" value="c1">c) Usar un libro de cocina donde usted sabe hay una buena receta.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta1', 'd1')" formControlName="d1" id="d1" value="d1">d) Cocinar algo que usted sabe sin la necesidad de instrucciones.</mat-checkbox>
+    </div>
 
-  <label for="pregunta2">Usted escogerá alimento en un restaurante o un café. Usted haría:</label>
+    <div name="pregunta2">
+      <h3>2. Usted escogerá alimento en un restaurante o un café. Usted haría:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta2', 'a2')" formControlName="a2" id="a2">a) Escuchar al mesero o pedir que amigos recomienden opciones.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta2', 'b2')" formControlName="b2" id="b2">b) Mirar lo que otros comen o mirar dibujos de cada platillo.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta2', 'c2')" formControlName="c2" id="c2">c) Escoger de las descripciones en el menú.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta2', 'd2')" formControlName="d2" id="d2">d) Escoger algo que tienes o has tenido antes.</mat-checkbox>
+    </div>
 
+    <div name="pregunta3">
+      <h3>3. Aparte del precio, qué más te influenciaría para comprar un libro de ciencia ficción:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta3', 'a3')" formControlName="a3" id="a3">a) Un amigo habla acerca de él y te lo recomienda.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta3', 'b3')" formControlName="b3" id="b3">b) Tienes historias reales, experiencias y ejemplos.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta3', 'c3')" formControlName="c3" id="c3">c) Leyendo rápidamente partes de él.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta3', 'd3')" formControlName="d3" id="d3">d) El diseño de la pasta es atractivo.</mat-checkbox>
+    </div>
+
+    <div name="pregunta4">
+      <h3>4. Usted ha terminado una competencia o un examen y le gustaría tener alguna retroalimentación. Te gustaría retroalimentarte:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta4', 'a4')" formControlName="a4" id="a4">a) Usando descripciones escritas de los resultados.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta4', 'b4')" formControlName="b4" id="b4">b) Usando ejemplos de lo que usted ha hecho.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta4', 'c4')" formControlName="c4" id="c4">c) Usando gráficos que muestran lo que usted ha logrado.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta4', 'd4')" formControlName="d4" id="d4">d) De alguien que habla por usted.</mat-checkbox>
+    </div>
+
+    <div name="pregunta5">
+      <h3>5. Usted tiene un problema con la rodilla. Usted preferiría que el doctor:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta5', 'a5')" formControlName="a5" id="a5">a) Use un modelo de plástico y te enseñe lo que está mal.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta5', 'b5')" formControlName="b5" id="b5">b) Te dé una página de internet o algo para leer.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta5', 'c5')" formControlName="c5" id="c5">c) Te describa lo que está mal.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta5', 'd5')" formControlName="d5" id="d5">d) Te enseñe un diagrama de lo que está mal.</mat-checkbox>
+    </div>
+
+    <div name="pregunta6">
+      <h3>6. Usted está a punto de comprar una cámara digital o teléfono o móvil. ¿Aparte del precio qué más influirá en tomar tu decisión?</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta6', 'a6')" formControlName="a6" id="a6">a) Probándolo.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta6', 'b6')" formControlName="b6" id="b6">b) Es un diseño moderno y se mira bien.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta6', 'c6')" formControlName="c6" id="c6">c) Leer los detalles acerca de sus características.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta6', 'd6')" formControlName="d6" id="d6">d) El vendedor me informa acerca de sus características.</mat-checkbox>
+    </div>
+
+    <div name="pregunta7">
+      <h3>7. Usted no está seguro como se deletrea trascendente o tracendente ¿Ud. qué haría?</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta7', 'a7')" formControlName="a7" id="a7">a) Escribir ambas palabras en un papel y escojo una.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta7', 'b7')" formControlName="b7" id="b7">b) Pienso cómo suena cada palabra y escojo una.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta7', 'c7')" formControlName="c7" id="c7">c) Busco la palabra en un diccionario.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta7', 'd7')" formControlName="d7" id="d7">d) Veo la palabra en mi mente y escojo según como la veo.</mat-checkbox>
+    </div>
+
+    <div name="pregunta8">
+      <h3>8. Me gustan las páginas de Internet que tienen:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta8', 'a8')" formControlName="a8" id="a8">a) Interesantes descripciones escritas, listas y explicaciones.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta8', 'b8')" formControlName="b8" id="b8">b) Diseño interesante y características visuales.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta8', 'c8')" formControlName="c8" id="c8">c) Cosas que con un click pueda cambiar o examinar.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta8', 'd8')" formControlName="d8" id="d8">d) Canales donde puedo oír música, programas de radio o entrevistas.</mat-checkbox>
+    </div>
+
+    <div name="pregunta9">
+      <h3>9. Usted está planeadno unas vacaciones para un grupo. Usted quiere alguna observación de ellos acerca del plan. Usted qué haría:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta9', 'a9')" formControlName="a9" id="a9">a) Usa un mapa o página de Internet para mostrarles los lugares.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta9', 'b9')" formControlName="b9" id="b9">b) Describe algunos de los puntos sobresalientes.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta9', 'c9')" formControlName="c9" id="c9">c) Darles una copia del itinerario impreso.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta9', 'd9')" formControlName="d9" id="d9">d) Llamarles por teléfono o mandar mensaje por correo electrónico.</mat-checkbox>
+    </div>
+
+    <div name="pregunta10">
+      <h3>10. Usted está usando un libro, disco compacto o página de Internet para aprender a tomar fotos con su cámara digital nueva. Usted le gustaría tener:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta10', 'a10')" formControlName="a10" id="a10">a) Una oportunidad de hacer preguntas acerca de la cámara y sus características.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta10', 'b10')" formControlName="b10" id="b10">b) Esquemas o diagramas que muestran la cámara y la función de cada parte.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta10', 'c10')" formControlName="c10" id="c10">c) Ejemplos de buenas y malas fotos y cómo mejorarlas.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta10', 'd10')" formControlName="d10" id="d10">d) Aclarar las instrucciones escritas con listas y puntos sobre qué hacer.</mat-checkbox>
+    </div>
+
+    <div name="pregunta11">
+      <h3>11. Usted quiere aprender un programa nuevo, habilidad o juego en una computadora. Usted qué hace:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta11', 'a11')" formControlName="a11" id="a11">a) Hablar con gente que sabe acerca del programa.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta11', 'b11')" formControlName="b11" id="b11">b) Leer las instrucciones que vienen en el programa.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta11', 'c11')" formControlName="c11" id="c11">c) Seguir los esquemas en el libro que acompaña el programa.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta11', 'd11')" formControlName="d11" id="d11">d) Use los controles o el teclado.</mat-checkbox>
+    </div>
+
+    <div name="pregunta12">
+      <h3>12. Estás ayudando a alguien que quiere ir al aeropuerto, al centro del pueblo o la estación del ferrocarril. Usted hace:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta12', 'a12')" formControlName="a12" id="a12">a) Va con la persona.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta12', 'b12')" formControlName="b12" id="b12">b) Anote las direcciones en un papel (sin mapa).</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta12', 'c12')" formControlName="c12" id="c12">c) Les dice las direcciones.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta12', 'd12')" formControlName="d12" id="d12">d) Les dibuja un croquis o les da un mapa.</mat-checkbox>
+    </div>
+
+    <div name="pregunta13">
+      <h3>13. Recuerde un momento en su vida en que Ud. aprendió a hacer algo nuevo. Trate de evitar escoger una destreza física, como andar en bicicleta. Ud. aprendió mejor:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta13', 'a13')" formControlName="a13" id="a13">a) Viendo una demostración.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta13', 'b13')" formControlName="b13" id="b13">b) Con las instrucciones escritas, en un manual o libro de texto.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta13', 'c13')" formControlName="c13" id="c13">c) Escuchando a alguien explicarlo o haciendo preguntas.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta13', 'd13')" formControlName="d13" id="d13">d) Con esquemas y diagramas o pistas visuales.</mat-checkbox>
+    </div>
+
+    <div name="pregunta14">
+      <h3>14. Ud. prefiere un maestro o conferencista que use:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta14', 'a14')" formControlName="a14" id="a14">a) Demostraciones, modelos o sesiones prácticas.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta14', 'b14')" formControlName="b14" id="b14">b) Folletos, libros o lecturas.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta14', 'c14')" formControlName="c14" id="c14">c) Diagramas, esquemas o gráficos.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta14', 'd14')" formControlName="d14" id="d14">d) Preguntas y respuestas, pláticas y oradores invitados.</mat-checkbox>
+    </div>
+
+    <div name="pregunta15">
+      <h3>15. Un grupo de turistas quiere aprender acerca de parques o reservas naturales en su área. Usted:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta15', 'a15')" formControlName="a15" id="a15" value="a15">a) Los acompaña a un parque o reserva natural.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta15', 'b15')" formControlName="b15" id="b15">b) Les da un libro o folleto acerca de parques o reservas naturales.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta15', 'c15')" formControlName="c15" id="c15">c) Les da una plática acerca de parques o reservas naturales.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta15', 'd15')" formControlName="d15" id="d15">d) Les muestra imágenes de Internet, fotos o libros con dibujos.</mat-checkbox>
+    </div>
+
+    <div name="pregunta16">
+      <h3>16. Usted tiene que hacer un discurso para una conferencia u ocasión especial. Usted hace:</h3>
+      <mat-checkbox (change)="updateSelectedCount('pregunta16', 'a16')" formControlName="a16" id="a16">a) Escribir el discurso y aprendérselo leyéndolo varias veces.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta16', 'b16')" formControlName="b16" id="b16">b) Reunir muchos ejemplos e historias para hacer el discurso verdadero y práctico.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta16', 'c16')" formControlName="c16" id="c16">c) Escribir algunas palabras clave y practicar el discurso repetidas veces.</mat-checkbox>
+      <mat-checkbox (change)="updateSelectedCount('pregunta16', 'd16')" formControlName="d16" id="d16">d) Hacer diagramas o esquemas que te ayuden a explicar las cosas.</mat-checkbox>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="onFinishTest()">Terminar Test</button>
+</form>
