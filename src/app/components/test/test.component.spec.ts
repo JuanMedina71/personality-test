@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VarkComponent } from './vark.component';
+import { TestComponent } from './test.component';
 
-describe('VarkComponent', () => {
-  let component: VarkComponent;
-  let fixture: ComponentFixture<VarkComponent>;
+describe('TestComponent', () => {
+  let component: TestComponent;
+  let fixture: ComponentFixture<TestComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [VarkComponent]
+      declarations: [TestComponent]
     });
-    fixture = TestBed.createComponent(VarkComponent);
+    fixture = TestBed.createComponent(TestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

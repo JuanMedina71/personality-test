@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './vark.component.html',
   styleUrls: ['./vark.component.css']
 })
-export class VARKComponent {
+export class VarkComponent {
 
 }
