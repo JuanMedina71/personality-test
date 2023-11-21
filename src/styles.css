@@ -5,3 +5,5 @@ body {
     background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  
     background: linear-gradient(to right, #3c1053, #ad5389); 
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

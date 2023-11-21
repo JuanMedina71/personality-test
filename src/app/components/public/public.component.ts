@@ -18,11 +18,11 @@ export class PublicComponent {
       case 'admin':
         this.router.navigate(['/loggin']);
         break;
-      case 'varkTest':
+      case 'vark':
         this.router.navigate(['']);
         break;
-      case 'jungMayerBriggsTest':
-        this.router.navigate(['']);
+      case 'jung':
+        this.router.navigate(['/testP']);
         break;
     }
   }
