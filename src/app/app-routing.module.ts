@@ -5,6 +5,7 @@ import { LogginComponent } from './components/loggin/loggin.component';
 import { PublicComponent } from './components/public/public.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TestComponent } from './components/test/test.component';
+import { VarkComponent } from './components/vark/vark.component';
 import { VerificationComponent } from './components/verification/verification.component';
 
 const routes: Routes = [
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: "public", component: PublicComponent},
   { path: "adminPanel", component: AdminPanelComponent},
   {path: "testP", component: TestComponent},
-
+  {path: "VARK", component: VarkComponent}
 ];
 
 @NgModule({

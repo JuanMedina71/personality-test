@@ -1,0 +1,131 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: white;
+  /* Cambiado a color blanco */
+}
+
+/* Estilos para el formulario */
+form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el encabezado (h1) */
+h1 {
+  color: white;
+  /* Cambiado a color blanco */
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  /* Centrado el texto */
+}
+
+/* Estilos para los párrafos (p) */
+p {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  text-align: center; /* Cambiado a centrar el texto */
+  color: white;
+}
+
+/* Estilos para las etiquetas (h3) */
+h3 {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: justify;
+}
+
+/* Estilos para los checkboxes (mat-checkbox) */
+mat-checkbox {
+  display: block;
+  margin-top: 5px;
+}
+
+/* Estilos para el contenedor div */
+div[name="name"] {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Estilos para el mat-form-field */
+.mat-form-field {
+  width: 100%;
+  max-width: 400px; /* O ajusta el ancho máximo según sea necesario */
+  text-align: center;
+}
+
+/* Estilos para la etiqueta (mat-label) dentro de mat-form-field */
+.mat-form-field-label {
+  color: #333; /* Color del texto de la etiqueta */
+}
+
+/* Estilos para el input dentro de mat-form-field */
+input.mat-input-element {
+  border: 1px solid #ccc; /* Añade un borde al input */
+  border-radius: 4px; /* Agrega bordes redondeados */
+  padding: 8px; /* Ajusta el relleno según sea necesario */
+  width: 100%; /* Ocupa el ancho completo del mat-form-field */
+}
+
+/* Estilos para el botón (button) */
+button {
+  display: flex;
+  margin-top: 15px;
+  margin: 0 auto; /* Centra horizontalmente */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #E033FF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: #9033FF;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  form {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  input.mat-input-element {
+    padding: 6px;
+  }
+}

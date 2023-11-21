@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { DashboardJungComponent } from './components/dashboard-jung/dashboard-jung.component';
 import { LogginComponent } from './components/loggin/loggin.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PublicComponent } from './components/public/public.component';
@@ -28,8 +29,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { TestComponent } from './components/test/test.component';
 import { VarkComponent } from './components/vark/vark.component';
 import { VerificationComponent } from './components/verification/verification.component';
-import { DashboardJungComponent } from './components/dashboard-jung/dashboard-jung.component';
-
 
 @NgModule({
   declarations: [
