@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+<!-- resultados.component.html -->
+<div class="center-container">
+    <form [formGroup]="formulario" class="mx-auto text-center">
+      <mat-form-field>
+        <input matInput formControlName="nombre" placeholder="Ingrese el nombre">
+      </mat-form-field>
+      <button mat-button (click)="buscarDatosPorNombre()">Buscar</button>
+    </form>
+  
+    <div *ngIf="resultados.length > 0" class="mt-4">
+      <h2>Resultados de la búsqueda:</h2>
+      <div class="card-container">
+        <mat-card *ngFor="let resultado of resultados" class="example-card">
+          <mat-card-header>
+            <mat-card-title>{{ resultado.nombre }}</mat-card-title>
+            <mat-card-subtitle>{{ resultado.tipoPredominante }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ resultado.descripcionResultado }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="generarPDF(resultado)" >ImprimirPdf</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

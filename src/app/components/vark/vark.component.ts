@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Firestore, addDoc, collection } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup } from '@angular/forms';
+
 import Swal from 'sweetalert2';
 
 @Component({
@@ -22,7 +24,7 @@ export class VarkComponent {
   opcionesR = ['c1', 'c2', 'c3', 'a4', 'b5', 'c6', 'c7', 'a8', 'c9', 'd10', 'b11', 'b12', 'b13', 'b14', 'b15', 'a16'];
   opcionesK = ['d1', 'd2', 'b3', 'b4', 'a5', 'a6', 'a7', 'c8', 'd9', 'c10', 'd11', 'a12', 'a13', 'a14', 'a15', 'b16'];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private firestore: Firestore) {
     this.form = this.fb.group({
       nombre: [''],
       a1: [false],
@@ -148,7 +150,7 @@ export class VarkComponent {
     return selectedAnswers;
   }
 
-  onFinishTest() {
+ async onFinishTest() {
     this.answers = this.getSelectedAnswers();
 
     // Verificar si se han seleccionado respuestas
@@ -219,23 +221,37 @@ export class VarkComponent {
       this.descripcionResultado = 'Aprendizaje kinestésico, donde las personas aprenden mejor mediante la experiencia práctica y la acción física. Prefieren aprender haciendo y participando en actividades prácticas.';
     }
 
-    // Muestra los contadores y el tipo predominante
-    const message = `Hola ${this.nombre}\n\ntu tipo predominante es: ${this.tipoPredominante} \n\nDescripción: ${this.descripcionResultado}`;
-    this.resultadoTest = this.tipoPredominante;
-    // Resto del código para mostrar el mensaje de éxito y reiniciar el formulario
-    Swal.fire({
-      icon: 'success',
-      title: 'Test completado',
-      text: 'Tus respuestas han sido registradas.\n' + message,
-      confirmButtonText: 'OK',
-    }).then(() => {
-      this.answers = {};
-      this.form.reset();
-      this.initializeSelectedCounts(); // Restablece los contadores al reiniciar el formulario
-      this.tipoPredominante = ''; // Restablece el tipo predominante al reiniciar el formulario
-      this.nombre = '';
-    });
+    const data = {
+      nombre: this.nombre,
+      tipoPredominante: this.tipoPredominante,
+      descripcionResultado: this.descripcionResultado,
+    }
 
-    console.log(this.answers)
+    try {
+      const docRef = await addDoc(collection(this.firestore, 'testV'), data);
+      const message = `Hola ${this.nombre}\n\ntu tipo predominante es: ${this.tipoPredominante} \n\nDescripción: ${this.descripcionResultado}`;
+      this.resultadoTest = this.tipoPredominante;
+  
+  
+      // Resto del código para mostrar el mensaje de éxito y reiniciar el formulario
+      Swal.fire({
+        icon: 'success',
+        title: 'Test completado',
+        text: 'Tus respuestas han sido registradas.\n' + message,
+        confirmButtonText: 'OK',
+      }).then(() => {
+        this.answers = {};
+        this.form.reset();
+        this.initializeSelectedCounts(); // Restablece los contadores al reiniciar el formulario
+        this.tipoPredominante = ''; // Restablece el tipo predominante al reiniciar el formulario
+        this.nombre = '';
+      });
+
+      console.log('Documento agregado con ID', docRef.id);
+  
+    } catch(error) {
+      console.error('Error al enviar datos a Firestore:', error);
+    }
+    
   }
 }
