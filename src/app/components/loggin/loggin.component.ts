@@ -33,11 +33,11 @@ export class LogginComponent implements OnInit {
 
       this.connectionDBService.login({email, password}).then((userCredential) => {
         const user = userCredential.user;
-        if(user && user.emailVerified) {        
+        if(user && user.emailVerified) {
         Swal.fire('Exito', 'Inicio de sesion exitoso', 'success');
-          this.router.navigate(['/register']);          
+          this.router.navigate(['/adminPanel']);
         }else if (user && !user.emailVerified) {
-          this.router.navigate(['/verification']);          
+          this.router.navigate(['/verification']);
         } else {
           Swal.fire('Error', 'Ha ocurrido un error durante el inicio de sesión en cuanto a verificación', 'error');
         }

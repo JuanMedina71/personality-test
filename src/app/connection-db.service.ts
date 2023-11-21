@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Auth, User, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from '@angular/fire/auth';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class ConnectionDBService {
   functions: any;
 
-  constructor(private auth: Auth) { }
+  constructor(private auth: Auth,) { }
 
   register({email, password}: {email: string, password: string}) {
     return createUserWithEmailAndPassword(this.auth, email, password);
@@ -29,6 +28,7 @@ export class ConnectionDBService {
     return this.auth.currentUser;
   }
 
+  
 
 
 }

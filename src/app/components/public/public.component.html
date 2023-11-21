@@ -1,5 +1,16 @@
-<app-navbar></app-navbar>
-
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">InsightIQ</a>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <button (click)="enviarDuda()" mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+        <mat-icon>help</mat-icon>
+      </button>
+    </div>
+</nav>
 
 <div class="public-container">
     <div class="card-container">
@@ -22,6 +33,14 @@
         </mat-card>
         <div class="admin-text">
             <p>Test Jung Mayer</p>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <mat-card class="public-card card-jung" (click)="redirectToPage('jung')">
+        </mat-card>
+        <div class="admin-text">
+            <p>Resultados</p>
         </div>
     </div>
   </div>
