@@ -28,6 +28,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { TestComponent } from './components/test/test.component';
 import { VarkComponent } from './components/vark/vark.component';
 import { VerificationComponent } from './components/verification/verification.component';
+import { DashboardJungComponent } from './components/dashboard-jung/dashboard-jung.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { VerificationComponent } from './components/verification/verification.co
     VerificationComponent,
     PublicComponent,
     AdminPanelComponent,
+    DashboardJungComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: "verification", component: VerificationComponent},
   { path: "public", component: PublicComponent},
   { path: "adminPanel", component: AdminPanelComponent},
-  {path: "testP", component: TestComponent}
+  {path: "testP", component: TestComponent},
 
 ];
 
