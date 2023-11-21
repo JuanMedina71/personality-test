@@ -7,6 +7,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { TestComponent } from './components/test/test.component';
 import { VerificationComponent } from './components/verification/verification.component';
 import { DashboardJungComponent } from './components/dashboard-jung/dashboard-jung.component';
+import { CatalogovComponent } from './components/catalogov/catalogov.component';
+import { CatalogojComponent } from './components/catalogoj/catalogoj.component';
 
 const routes: Routes = [
   { path: "", redirectTo:"public", pathMatch: "full"},
@@ -16,7 +18,8 @@ const routes: Routes = [
   { path: "public", component: PublicComponent},
   { path: "adminPanel", component: AdminPanelComponent},
   {path: "testP", component: TestComponent},
-  {path: "dashbordJ", component: DashboardJungComponent}
+  {path: "dashbordJ", component: DashboardJungComponent},
+  {path: "catalogoV", component: CatalogovComponent}
 
 ];
 

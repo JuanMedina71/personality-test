@@ -46,6 +46,7 @@
   .mat-icon.btnEdit{
     color: blue;
   }
+  
   /* Estilos responsivos */
   @media screen and (max-width: 768px) {
     table {

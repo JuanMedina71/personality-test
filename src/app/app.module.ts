@@ -30,7 +30,11 @@ import { VarkComponent } from './components/vark/vark.component';
 import { VerificationComponent } from './components/verification/verification.component';
 import { DashboardJungComponent } from './components/dashboard-jung/dashboard-jung.component';
 import { CatalogojComponent } from './components/catalogoj/catalogoj.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CatalogovComponent } from './components/catalogov/catalogov.component';
+import { DialogJComponent } from './components/dialog-j/dialog-j.component';
+import { DialogVComponent } from './components/dialog-v/dialog-v.component';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +49,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     AdminPanelComponent,
     DashboardJungComponent,
     CatalogojComponent,
+    CatalogovComponent,
+    DialogJComponent,
+    DialogVComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +71,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,
     ReactiveFormsModule,
     MatDialogModule,
+    MatFormFieldModule,
     provideFirebaseApp(() => initializeApp({"projectId":"insightiq-8a302","appId":"1:1061784780582:web:43736fd73e766f5af70be7","storageBucket":"insightiq-8a302.appspot.com","apiKey":"AIzaSyAExb7g-pbihQqNGNSqZa9m8PS40N-Cawg","authDomain":"insightiq-8a302.firebaseapp.com","messagingSenderId":"1061784780582"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
