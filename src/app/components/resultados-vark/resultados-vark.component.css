@@ -1,19 +1,43 @@
 /* resultados.component.css (o tu archivo de estilos principal) */
 .center-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Ajusta la altura según tus necesidades */
-  }
+  margin-top: 20px;
+  display: flex;
+  width: 500px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
   
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: -15px;
+
+}
+
+.example-card {
+  width: 300px;
+  text-align: left;
+  margin-bottom: -15px;
+}
   
-  .example-card {
-    width: 300px;
+
+  .botonBuscar{
+    background-color: white;
+    margin-left: 20px;
   }
-  
+
+  .titulo{
+    font-size: large;
+  }
+
+  .divCompleto{
+    background-color: #f0f0f0;
+    border-radius: 10px; /* Radio de las esquinas, haciendo los bordes redondeados */
+    border: 2px solid #000; /* Grosor, estilo y color del borde */
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
