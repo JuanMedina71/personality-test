@@ -1,1 +1,333 @@
-<p>test works!</p>
+<div class="container my-3 div-container">
+  <div class="row align-items-center">
+    <div class="container">
+      <div class="container">
+          <h1><strong><u>Test Basado en la tipología de Jung y Myers-Briggs</u></strong></h1>
+      </div>
+      <div>
+          <p>
+              <strong>Instrucciones para resolver la prueba de PersonalformControlNamead:</strong><br>
+              Evalúe cada par de opciones de las columnas usando del 0 al 10 para calificar la que mejor le describe. Podrá sentirse formControlNameentificado
+              con cualformControlNameades de ambas columnas, pero tiene 10 puntos para repartir entre cada una de las dos opciones sin utilizar el número 5.
+          </p>
+      </div>
+  </div>
+      <form [formGroup]="forms" (ngSubmit)="calcularResultado()">
+        <div formGroupName="nombreCompleto" class="container contenedor">
+          <label for="nombre"><strong>Ingrese su nombre:</strong></label>
+          <input type="text" formControlName="nombre">
+        </div>
+          <!-- ---------------------------------------------------------------
+
+          Aqui empieza la 1ra Dimension
+
+          --------------------------------------------------------------- -->
+          <div class="container align-items-center categoria">
+              <h2>1. Energía, focalización y actitud vital</h2>
+          </div>
+          <div class="container">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Extrovertido</th>
+                          <th>Puntos</th>
+                          <th>Introvertido</th>
+                          <th>Puntos</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Emprendedor y Entusiasta</td>
+                          <div formGroupName="extrovertido"><td><input type="text" formControlName="emprendedor"></td></div>
+                          <td>Reservado</td>
+                          <div formGroupName="introvertido"><td><input type="text" formControlName="reservado"></td></div>
+                      </tr>
+                      <tr>
+                          <td>Actúa y luego piensa</td>
+                          <div formGroupName="extrovertido"><td ><input type="text" formControlName="actuaLuegoPiensa"></td></div>
+                          <td>Piensa y luego actúa</td>
+                          <div formGroupName="introvertido"><td ><input type="text" formControlName="piensaLuegoActua"></td></div>
+                      </tr>
+                      <tr>
+                          <td>Piensa en voz alta</td>
+                          <div formGroupName="extrovertido"><td ><input type="text" formControlName="piensaVozAlta"></td></div>
+                          <td>Piensa en voz baja</td>
+                          <div formGroupName="introvertido"><td ><input type="text" formControlName="piensaVozBaja"></td></div>
+                      </tr>
+                      <tr>
+                          <td>Tiene mucha energía</td>
+                          <div formGroupName="extrovertido"><td ><input type="text" formControlName="muchaEnergia"></td></div>
+                          <td>Energía Tranquila</td>
+                          <div formGroupName="introvertido"><td ><input type="text" formControlName="energiaTranquila"></td></div>
+                      </tr>
+                      <tr>
+                          <td>Prefiere hacer varias cosas a la vez</td>
+                          <div formGroupName="extrovertido"><td ><input type="text" formControlName="variasCosasVez"></td></div>
+                          <td>Prefiere concentrarse en una cosa</td>
+                          <div formGroupName="introvertido"><td ><input type="text" formControlName="concentrarseUnaCosa"></td></div>
+                      </tr>
+                      <tr>
+                          <td>Habla más que escucha</td>
+                          <div formGroupName="extrovertido"><td ><input type="text" formControlName="hablaMasEscucha"></td></div>
+                          <td>Escucha más que habla</td>
+                          <div formGroupName="introvertido"><td ><input type="text" formControlName="escuchaMasHabla"></td></div>
+                      </tr>
+                      <tr>
+                          <td>Es fácil de conocer</td>
+                          <div formGroupName="extrovertido"><td ><input type="text" formControlName="facilConocer"></td></div>
+                          <td>Lleva una vida muy privada</td>
+                          <div formGroupName="introvertido"><td ><input type="text" formControlName="vidaMuyPrivada"></td></div>
+                      </tr>
+                      <tr>
+                          <td>Puede distraerse con facilidad</td>
+                          <div formGroupName="extrovertido"><td ><input type="text" formControlName="distraerseFacilidad"></td></div>
+                          <td>Gran capacidad de concentración</td>
+                          <div formGroupName="introvertido"><td ><input type="text" formControlName="granCapacidadConcentracion"></td></div>
+                      </tr>
+                      <tr>
+                          <td>Le gusta rodearse de gente</td>
+                          <div formGroupName="extrovertido"><td ><input type="text" formControlName="gustaGente"></td></div>
+                          <td>Se siente a gusto a solas</td>
+                          <div formGroupName="introvertido"><td ><input type="text" formControlName="aGustoSolas"></td></div>
+                      </tr>
+                  </tbody>
+                </table>   
+          </div>
+          <!-- ---------------------------------------------------------------
+
+          Aqui empieza la 2da Dimension
+
+          --------------------------------------------------------------- -->
+
+          <div class="container align-items-center categoria">
+            <h2>2. Manejo de la información y actitud ante el entorno</h2>
+          </div>
+          <div class="container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Sensorial</th>
+                  <th>Puntos</th>
+                  <th>Intuitivo</th>
+                  <th>Puntos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Confía en la experiencia propia</td>
+                  <div formGroupName="sensorial"><td><input type="text" formControlName="ExpPropiaS"></td></div>
+                  <td>Confía en sus instintos</td>
+                  <div formGroupName="intuitivo"><td><input type="text" formControlName="InstintosI"></td></div>
+                </tr>
+                <tr>
+                  <td>Realista, ve lo que es</td>
+                  <div formGroupName="sensorial"><td><input type="text" formControlName="RealistaS"></td></div>
+                  <td>Imaginativo, ve lo que podría ser</td>
+                  <div formGroupName="intuitivo"><td><input type="text" formControlName="ImaginativoI"></td></div>
+                </tr>
+                <tr>
+                  <td>Utiliza destrezas ya aprendidas</td>
+                  <div formGroupName="sensorial"><td><input type="text" formControlName="DestrezasAprendS"></td></div>
+                  <td>Prefiere desarrolar nuevas destrezas</td>
+                  <div formGroupName="intuitivo"><td><input type="text" formControlName="DestrezasNuevasI"></td></div>
+                </tr>
+                <tr>
+                  <td>Prefiere instrucciones detalladas</td>
+                  <div formGroupName="sensorial"><td><input type="text" formControlName="InstruccionesDetalladasS"></td></div>
+                  <td>Gusta descubrir las cosas por sí mismo</td>
+                  <div formGroupName="intuitivo"><td><input type="text" formControlName="DescubrirPorSiMismoI"></td></div>
+                </tr>
+                <tr>
+                  <td>Ve detalles y recuerda hechos</td>
+                  <div formGroupName="sensorial"><td><input type="text" formControlName="DetallesHechosS"></td></div>
+                  <td>Percibe cualquier cosa nueva o diferente</td>
+                  <div formGroupName="intuitivo"><td><input type="text" formControlName="PercibeNuevaDiferenteI"></td></div>
+                </tr>
+                <tr>
+                  <td>Admira soluciones prácticas</td>
+                  <div formGroupName="sensorial"><td><input type="text" formControlName="SolucionesPracticasS"></td></div>
+                  <td>Admira ideas creativas</td>
+                  <div formGroupName="intuitivo"><td><input type="text" formControlName="AdmiraIdeasCreativasI"></td></div>
+                </tr>
+                <tr>
+                  <td>Se concentra en hechos específicos</td>
+                  <div formGroupName="sensorial"><td><input type="text" formControlName="ConcentraHechosEspS"></td></div>
+                  <td>Tiene ideas y visión de conjunto</td>
+                  <div formGroupName="intuitivo"><td><input type="text" formControlName="TieneIdeasVisionI"></td></div>
+                </tr>
+                <tr>
+                  <td>Trabaja a un ritmo uniforme</td>
+                  <div formGroupName="sensorial"><td><input type="text" formControlName="RitmoUniformeS"></td></div>
+                  <td>Trabaja en ráfagas de energía</td>
+                  <div formGroupName="intuitivo"><td><input type="text" formControlName="RafagasEnergiaI"></td></div>
+                </tr>
+                <tr>
+                  <td>Vive en el aquí y el ahora</td>
+                  <div formGroupName="sensorial"><td><input type="text" formControlName="AquiAhoraS"></td></div>
+                  <td>Piensa en las implicaciones futuras</td>
+                  <div formGroupName="intuitivo"><td><input type="text" formControlName="ImplicacionesFuturasI"></td></div>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- ---------------------------------------------------------------
+
+          Aqui empieza la 3ra Dimension
+
+          --------------------------------------------------------------- -->
+          <div class="container align-items-center categoria">
+            <h2>3. Actitud y toma de deccisiones</h2>
+          </div>
+          <div class="container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Racional</th>
+                  <th>Puntos</th>
+                  <th>Emocional</th>
+                  <th>Puntos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tiende a ver defectos ajenos</td>
+                  <div formGroupName="racional"><td><input type="text" formControlName="DefectosR"></td></div>
+                  <td>Tiende a ver cualidades ajenas</td>
+                  <div formGroupName="emocional"><td><input type="text" formControlName="CualidadesE"></td></div>
+                </tr>
+                <tr>
+                  <td>Se convence con la logica</td>
+                  <div formGroupName="racional"><td><input type="text" formControlName="ConLogicaR"></td></div>
+                  <td>Se convence con sus sensaciones</td>
+                  <div formGroupName="emocional"><td><input type="text" formControlName="ConSensacionesE"></td></div>
+                </tr>
+                <tr>
+                  <td>Aparenta ser frio y reservado</td>
+                  <div formGroupName="racional"><td><input type="text" formControlName="FrioR"></td></div>
+                  <td>Aparenta ser calido y amistoso</td>
+                  <div formGroupName="emocional"><td><input type="text" formControlName="CalidoE"></td></div>
+                </tr>
+                <tr>
+                  <td>Toma desiciones objetivamente</td>
+                  <div formGroupName="racional"><td><input type="text" formControlName="ObjetivamenteR"></td></div>
+                  <td>Decide por sus valores y sensaciones</td>
+                  <div formGroupName="emocional"><td><input type="text" formControlName="ValoresE"></td></div>
+                </tr>
+                <tr>
+                  <td>No toma las cosas personalmente</td>
+                  <div formGroupName="racional"><td><input type="text" formControlName="NoPersonalR"></td></div>
+                  <td>Toma muchas cosas personalmente</td>
+                  <div formGroupName="emocional"><td><input type="text" formControlName="PersonalE"></td></div>
+                </tr>
+                <tr>
+                  <td>Es motivado por las metas</td>
+                  <div formGroupName="racional"><td><input type="text" formControlName="MetasR"></td></div>
+                  <td>Es motivado por el reconocimiento</td>
+                  <div formGroupName="emocional"><td><input type="text" formControlName="ReconocimientoE"></td></div>
+                </tr>
+                <tr>
+                  <td>Honesto y directo</td>
+                  <div formGroupName="racional"><td><input type="text" formControlName="HonestoR"></td></div>
+                  <td>Diplomatico y con mucho tacto</td>
+                  <div formGroupName="emocional"><td><input type="text" formControlName="DiplomaticoE"></td></div>
+                </tr>
+                <tr>
+                  <td>Valora la honestidad y la justicia</td>
+                  <div formGroupName="racional"><td><input type="text" formControlName="ValHonestidadR"></td></div>
+                  <td>Valora la armonia y la compasion</td>
+                  <div formGroupName="emocional"><td><input type="text" formControlName="ValArmoniaE"></td></div>
+                </tr>
+                <tr>
+                  <td>Argumenta o debate por diversion</td>
+                  <div formGroupName="racional"><td><input type="text" formControlName="ArgDiversionR"></td></div>
+                  <td>Evita las discusiones y conflictos</td>
+                  <div formGroupName="emocional"><td><input type="text" formControlName="EvitaDiscE"></td></div>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- ---------------------------------------------------------------
+
+          Aqui empieza la 4ta Dimension
+
+          --------------------------------------------------------------- -->
+          <div class="container align-items-center categoria">
+            <h2>4. Ambiente de trabajo, estilo de vformControlNamea en el entorno e interacción</h2>
+          </div>
+          <div class="container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Calificador</th>
+                  <th>Puntos</th>
+                  <th>Perceptivo</th>
+                  <th>Puntos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Trabajar primero, jugar después</td>
+                  <div formGroupName="calificador"><td><input type="text" formControlName="TrabajarPrimeroC"></td></div>
+                  <td>Jugar primero, trabajar después</td>
+                  <div formGroupName="perceptivo"><td><input type="text" formControlName="JugarPrimeroP"></td></div>
+                </tr>
+                <tr>
+                  <td>Prefiere terminar proyectos</td>
+                  <div formGroupName="calificador"><td><input type="text" formControlName="TerminarProyectosC"></td></div>
+                  <td>Prefiere empezar proyectos</td>
+                  <div formGroupName="perceptivo"><td><input type="text" formControlName="EmpezarProyectosP"></td></div>
+                </tr>
+                <tr>
+                  <td>Se siente a gusto llevando sus agendas</td>
+                  <div formGroupName="calificador"><td><input type="text" formControlName="AgendasCalificadorC"></td></div>
+                  <td>Dese la libertad de la espontaneidad</td>
+                  <div formGroupName="perceptivo"><td><input type="text" formControlName="LibertadEspontaneidadP"></td></div>
+                </tr>
+                <tr>
+                  <td>Le gusta tomar decisiones</td>
+                  <div formGroupName="calificador"><td><input type="text" formControlName="TomarDecisionesC"></td></div>
+                  <td>Pospone algunas decisiones, si puede</td>
+                  <div formGroupName="perceptivo"><td><input type="text" formControlName="PosponeDecisionesP"></td></div>
+                </tr>
+                <tr>
+                  <td>Presta atencion al tiempo, puntualidad</td>
+                  <div formGroupName="calificador"><td><input type="text" formControlName="PuntualidadC"></td></div>
+                  <td>Menos consciente del tiempo, impuntualidad</td>
+                  <div formGroupName="perceptivo"><td><input type="text" formControlName="ImpuntualidadP"></td></div>
+                </tr>
+                <tr>
+                  <td>Le gusta hacer y atenerse a planes</td>
+                  <div formGroupName="calificador"><td><input type="text" formControlName="AtenersePlanesC"></td></div>
+                  <td>Le gusta la flexibilidad en los planes</td>
+                  <div formGroupName="perceptivo"><td><input type="text" formControlName="FlexibilidadP"></td></div>
+                </tr>
+                <tr>
+                  <td>Quiere que las cosas se decidan</td>
+                  <div formGroupName="calificador"><td><input type="text" formControlName="CosasDecC"></td></div>
+                  <td>Quiere tener opciones abiertas</td>
+                  <div formGroupName="perceptivo"><td><input type="text" formControlName="OpcionesAbiertasP"></td></div>
+                </tr>
+                <tr>
+                  <td>Serio y convencional</td>
+                  <div formGroupName="calificador"><td><input type="text" formControlName="SerioConvencionalC"></td></div>
+                  <td>Relajado y poco convencional</td>
+                  <div formGroupName="perceptivo"><td><input type="text" formControlName="RelajadoConvencionalP"></td></div>
+                </tr>
+                <tr>
+                  <td>Justifica la mayoría de reglas</td>
+                  <div formGroupName="calificador"><td><input type="text" formControlName="JustificaReglasC"></td></div>
+                  <td>Cuestiona muchas reglas</td>
+                  <div formGroupName="perceptivo"><td><input type="text" formControlName="CuestionaReglasP"></td></div>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="divboton">
+            <button mat-fab extended color="primary" type="submit">
+              <mat-icon>send</mat-icon>
+                Enviar
+            </button>
+          </div>
+        </form>
+  </div>
+</div>
