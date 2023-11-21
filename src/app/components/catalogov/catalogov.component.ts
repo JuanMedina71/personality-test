@@ -1,15 +1,11 @@
-import { Component, Inject } from '@angular/core';
-import { Firestore, collection, query, where, getDocs, QuerySnapshot } from '@angular/fire/firestore';
+import { Component } from '@angular/core';
+import { Firestore, collection, query, updateDoc, getDocs, QuerySnapshot , doc, DocumentReference, where, deleteDoc} from '@angular/fire/firestore';
 import { MatTableDataSource } from '@angular/material/table';
 import { vark } from 'src/app/interfaces/vark';
 import { DialogVComponent } from '../dialog-v/dialog-v.component';
 import {
   MatDialog,
-  MAT_DIALOG_DATA,
-  MatDialogTitle,
-  MatDialogContent,
 } from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-catalogov',
@@ -19,7 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 export class CatalogovComponent {
   displayedColumns: string[] = ['nombre', 'tipoPredominante', 'descripcionResultado', 'acciones'];
   dataSource = new MatTableDataSource<vark>();
-
+  
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -58,7 +54,44 @@ export class CatalogovComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // Aquí puedes manejar acciones después de que se cierre el diálogo, si es necesario
+      if(result){
+        try{
+          this.actualizarDocumentoPorNombre(result.nombre, result)
+          console.log('Datos actualizados correctamente en Firebase');
+        }catch{
+          console.error('Error al actualizar datos:');
+        }
+      }
+    });
+  }
+
+  async actualizarDocumentoPorNombre(nombre: string, newData: any): Promise<void> {
+    const querySnapshot = await getDocs(query(collection(this.firestore, 'testV'), where('nombre', '==', nombre)));
+    querySnapshot.forEach(async (docSnapshot) => {
+      const documentRef = doc(this.firestore, 'testV', docSnapshot.id);
+      try {
+        await updateDoc(documentRef, newData);
+        console.log('Documento actualizado correctamente');
+      } catch (error) {
+        console.error('Error al actualizar el documento:', error);
+        throw error;
+      }
+    });
+  }
+
+  async eliminarDocumentoPorNombre(nombre: string): Promise<void> {
+    const querySnapshot = await getDocs(query(collection(this.firestore, 'testV'), where('nombre', '==', nombre)));
+    querySnapshot.forEach(async (docSnapshot) => {
+      const documentRef = doc(this.firestore, 'testV', docSnapshot.id);
+      try {
+        await deleteDoc(documentRef);
+        console.log('Documento eliminado correctamente');
+        window.location.reload();
+      } catch (error) {
+        console.error('Error al eliminar el documento:', error);
+        throw error;
+      }
     });
   }
 }
+
