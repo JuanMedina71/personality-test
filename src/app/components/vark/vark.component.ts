@@ -13,6 +13,7 @@ export class VarkComponent {
   answers: Record<string, string[]> = {};
   tipoPredominante: string = '';
   resultadoTest: string = '';
+  descripcionResultado: string = '';
 
   // Opciones para cada categoría VARK
   opcionesV = ['b1', 'b2', 'd3', 'c4', 'd5', 'b6', 'd7', 'b8', 'a9', 'b10', 'c11', 'd12', 'd13', 'c14', 'd15', 'd16'];
@@ -148,6 +149,23 @@ export class VarkComponent {
   onFinishTest() {
     this.answers = this.getSelectedAnswers();
 
+    // Verificar si se han seleccionado respuestas
+    const totalSelectedAnswers = Object.keys(this.answers).reduce(
+      (total, pregunta) => total + this.answers[pregunta].length,
+      0
+    );
+
+    if (totalSelectedAnswers === 0) {
+      // Mostrar un mensaje de error si no se han seleccionado respuestas
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Debes seleccionar al menos una respuesta antes de enviar el formulario.',
+        confirmButtonText: 'Entendido',
+      });
+      return;
+    }
+
     // Contadores para cada categoría VARK
     let contadorV = 0;
     let contadorA = 0;
@@ -176,16 +194,20 @@ export class VarkComponent {
     // Determinar el tipo predominante
     if (contadorV >= contadorA && contadorV >= contadorR && contadorV >= contadorK) {
       this.tipoPredominante = 'Visual';
+      this.descripcionResultado = 'Las personas con preferencia visual aprenden mejor a través de imágenes, gráficos y mapas mentales. Responden bien a la información visual.';
     } else if (contadorA >= contadorV && contadorA >= contadorR && contadorA >= contadorK) {
       this.tipoPredominante = 'Auditivo';
+      this.descripcionResultado = 'Aquellos con preferencia auditiva aprenden mejor a través del sonido y la audición. Prefieren explicaciones verbales, discusiones y el uso de la voz.';
     } else if (contadorR >= contadorV && contadorR >= contadorA && contadorR >= contadorK) {
       this.tipoPredominante = 'Lectura y Escritura';
+      this.descripcionResultado = ' Las personas con preferencia de lectura/escritura aprenden mejor a través de la lectura y la escritura. Les gusta tomar notas, leer textos y escribir resúmenes.';
     } else {
       this.tipoPredominante = 'Kinestésico';
+      this.descripcionResultado = 'Aprendizaje kinestésico, donde las personas aprenden mejor mediante la experiencia práctica y la acción física. Prefieren aprender haciendo y participando en actividades prácticas.';
     }
 
     // Muestra los contadores y el tipo predominante
-    const message = `\nTipo predominante: ${this.tipoPredominante}`;
+    const message = `\nTipo predominante: ${this.tipoPredominante} \n\nDescripción: ${this.descripcionResultado}`;
     this.resultadoTest = this.tipoPredominante;
     // Resto del código para mostrar el mensaje de éxito y reiniciar el formulario
     Swal.fire({
