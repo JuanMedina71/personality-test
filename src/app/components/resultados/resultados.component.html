@@ -9,16 +9,16 @@
 </nav>
 
 <!-- resultados.component.html -->
-<div class="center-container">
-    <form [formGroup]="formulario" class="mx-auto text-center">
+<div class="container center-container">
+    <form [formGroup]="formulario" class="mx-auto">
       <mat-form-field>
         <input matInput formControlName="nombre" placeholder="Ingrese el nombre">
       </mat-form-field>
-      <button mat-button (click)="buscarDatosPorNombre()">Buscar</button>
+      <button mat-button (click)="buscarDatosPorNombre()" class="botonBuscar" >Buscar</button>
     </form>
   
-    <div *ngIf="resultados.length > 0" class="mt-4">
-      <h2>Resultados de la búsqueda:</h2>
+    <div *ngIf="resultados.length > 0" class="mt-4 divCompleto">
+      <h2 class="titulo"><strong>Resultados de la búsqueda:</strong></h2>
       <div class="card-container">
         <mat-card *ngFor="let resultado of resultados" class="example-card">
           <mat-card-header>
