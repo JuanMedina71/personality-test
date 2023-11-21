@@ -1,0 +1,86 @@
+.div-container{
+    background-color: #f0f0f0;
+    border-radius: 10px; /* Radio de las esquinas, haciendo los bordes redondeados */
+    border: 2px solid #000; /* Grosor, estilo y color del borde */
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.categoria{
+    text-align: center;
+}
+
+table {
+    width: 100%;
+  }
+
+.div-categoria{
+    margin-top: 20px;
+}
+/* Estilos generales para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilos para alternar colores de filas */
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilos para los inputs */
+  input[type="text"] {
+    width: 50px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: 2px;
+    text-align: center;
+    size: 10px;
+  }
+  
+  /* Estilos para los títulos */
+  h1, h2 {
+    text-align: center;
+  }
+  
+  /* Estilos para el contenedor principal */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .divboton{
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  .contenedor{
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .contenedor input[type="text"]{
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .lista{
+    text-align: left;
+  }
+
+  .rojo{
+    color: red;
+  }

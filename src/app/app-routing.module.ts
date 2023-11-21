@@ -4,6 +4,7 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
 import { LogginComponent } from './components/loggin/loggin.component';
 import { PublicComponent } from './components/public/public.component';
 import { RegisterComponent } from './components/register/register.component';
+import { TestComponent } from './components/test/test.component';
 import { VerificationComponent } from './components/verification/verification.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: "verification", component: VerificationComponent},
   { path: "public", component: PublicComponent},
   { path: "adminPanel", component: AdminPanelComponent},
+  {path: "testP", component: TestComponent}
 
 ];
 
