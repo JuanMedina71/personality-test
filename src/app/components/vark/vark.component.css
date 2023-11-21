@@ -1,13 +1,16 @@
-/* vark.component.css */
-
 /* Estilos generales */
 body {
   font-family: 'Arial', sans-serif;
-  /* Cambiar la fuente principal */
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: white;
+  /* Cambiado a color blanco */
 }
 
+/* Estilos para el formulario */
 form {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -17,28 +20,31 @@ form {
 
 /* Estilos para el encabezado (h1) */
 h1 {
-  color: #333;
-  font-size: 24px;
+  color: white;
+  /* Cambiado a color blanco */
+  font-size: 2em;
   margin-bottom: 20px;
+  text-align: center;
+  /* Centrado el texto */
 }
 
 /* Estilos para los párrafos (p) */
 p {
-  color: #666;
+  display: block;
   font-size: 16px;
   margin-bottom: 15px;
-  text-align: justify;
-  /* Justificar el texto */
+  margin-top: 10px;
+  text-align: center; /* Cambiado a centrar el texto */
+  color: white;
 }
 
-/* Estilos para las etiquetas (label) */
+/* Estilos para las etiquetas (h3) */
 h3 {
   display: block;
   margin-top: 10px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.5em;
   text-align: justify;
-  /* Justificar el texto */
 }
 
 /* Estilos para los checkboxes (mat-checkbox) */
@@ -47,10 +53,38 @@ mat-checkbox {
   margin-top: 5px;
 }
 
+/* Estilos para el contenedor div */
+div[name="name"] {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Estilos para el mat-form-field */
+.mat-form-field {
+  width: 100%;
+  max-width: 400px; /* O ajusta el ancho máximo según sea necesario */
+  text-align: center;
+}
+
+/* Estilos para la etiqueta (mat-label) dentro de mat-form-field */
+.mat-form-field-label {
+  color: #333; /* Color del texto de la etiqueta */
+}
+
+/* Estilos para el input dentro de mat-form-field */
+input.mat-input-element {
+  border: 1px solid #ccc; /* Añade un borde al input */
+  border-radius: 4px; /* Agrega bordes redondeados */
+  padding: 8px; /* Ajusta el relleno según sea necesario */
+  width: 100%; /* Ocupa el ancho completo del mat-form-field */
+}
+
 /* Estilos para el botón (button) */
 button {
   display: flex;
-  margin-top: 15px; /* Ajusta el espacio superior según sea necesario */
+  margin-top: 15px;
+  margin: 0 auto; /* Centra horizontalmente */
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
@@ -74,16 +108,24 @@ button:hover {
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 1.5em;
   }
 
   h3 {
-    font-size: 14px;
+    font-size: 1.2em;
   }
 
   button {
     margin-top: 15px;
     padding: 8px 15px;
     font-size: 14px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  input.mat-input-element {
+    padding: 6px;
   }
 }

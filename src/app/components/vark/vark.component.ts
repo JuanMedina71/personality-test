@@ -14,6 +14,7 @@ export class VarkComponent {
   tipoPredominante: string = '';
   resultadoTest: string = '';
   descripcionResultado: string = '';
+  nombre: string = ''; // Variable para almacenar el nombre
 
   // Opciones para cada categoría VARK
   opcionesV = ['b1', 'b2', 'd3', 'c4', 'd5', 'b6', 'd7', 'b8', 'a9', 'b10', 'c11', 'd12', 'd13', 'c14', 'd15', 'd16'];
@@ -23,6 +24,7 @@ export class VarkComponent {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
+      nombre: [''],
       a1: [false],
       b1: [false],
       c1: [false],
@@ -155,6 +157,17 @@ export class VarkComponent {
       0
     );
 
+    if (this.nombre.trim() === '') {
+      // Mostrar un mensaje de error si el nombre está vacío
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Debes ingresar tu nombre.',
+        confirmButtonText: 'Entendido',
+      });
+      return;
+    }
+
     if (totalSelectedAnswers === 0) {
       // Mostrar un mensaje de error si no se han seleccionado respuestas
       Swal.fire({
@@ -207,7 +220,7 @@ export class VarkComponent {
     }
 
     // Muestra los contadores y el tipo predominante
-    const message = `\nTipo predominante: ${this.tipoPredominante} \n\nDescripción: ${this.descripcionResultado}`;
+    const message = `Hola ${this.nombre}\n\ntu tipo predominante es: ${this.tipoPredominante} \n\nDescripción: ${this.descripcionResultado}`;
     this.resultadoTest = this.tipoPredominante;
     // Resto del código para mostrar el mensaje de éxito y reiniciar el formulario
     Swal.fire({
@@ -220,6 +233,9 @@ export class VarkComponent {
       this.form.reset();
       this.initializeSelectedCounts(); // Restablece los contadores al reiniciar el formulario
       this.tipoPredominante = ''; // Restablece el tipo predominante al reiniciar el formulario
+      this.nombre = '';
     });
+
+    console.log(this.answers)
   }
 }

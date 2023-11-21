@@ -9,6 +9,10 @@ import { LogginComponent } from './components/loggin/loggin.component';
 import { TestComponent } from './components/test/test.component';
 import { VarkComponent } from './components/vark/vark.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FormsModule,
     AppRoutingModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
