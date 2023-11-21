@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,9 +18,7 @@ export class TestComponent implements OnInit{
   ngOnInit() {
     // ... código previo para inicializar el formulario ...
     this.forms = this.fb.group({
-      nombreCompleto: this.fb.group({
-        nombre: ['', [Validators.required, Validators.pattern('^[A-Z][a-z]+(?: [A-Z][a-z]+)*$')]]
-      }),
+        nombre: ['', [Validators.required, Validators.pattern('^[A-Z][a-z]+(?: [A-Z][a-z]+)*$')]],
       extrovertido: this.fb.group({
         emprendedor: ['', [Validators.required, this.validarValor(), Validators.min(0), Validators.max(10), Validators.pattern('^(10|[0-9])$')]],
         actuaLuegoPiensa: ['', [Validators.required, this.validarValor(), Validators.min(0), Validators.max(10), Validators.pattern('^(10|[0-9])$')]],
@@ -209,7 +208,8 @@ export class TestComponent implements OnInit{
     
     if(this.forms.valid){
       let result = '';
-    
+      let descripcion = '';
+      let nombre = this.forms.get('nombre')?.value;
     if (extrovertSum > introvertSum) {
       result += 'E';
     } else {
@@ -233,13 +233,78 @@ export class TestComponent implements OnInit{
     } else {
       result += 'P';
     }
-    Swal.fire('Resultado', `Tu tipo es: ${result}`, 'success');
-    }else{
-      Swal.fire('error', 'Recuerda que tienes que llenar todos los campos, no puedes usar el valor 5 y que el minimo y maximo son 0 y 10 respectivamente', 'error')
-    }
-    
-  }
 
+    if(result === 'ISTJ'){
+      descripcion = 'Los Logistas (ISTJ) se enorgullecen de su integridad. Las personas con este tipo de personalidad hacen lo que dicen y, cuando se comprometen a hacer algo, se aseguran de cumplirlo.'
+    }else if(result == 'ISFP'){
+      descripcion = 'Los Aventureros son verdaderos artistas, aunque no necesariamente en el sentido convencional. Para este tipo de personalidad, la vida misma es un lienzo para expresarse.'
+    }else if(result == 'ISFJ'){
+      descripcion = 'A su manera discreta y modesta, los Defensores ayudan a que el mundo gire. Trabajadoras y abnegadas, las personas con este tipo de personalidad tienen un profundo sentido de la responsabilidad hacia quienes las rodean. '
+    }else if(result == 'ISTP'){
+      descripcion = 'Las personas con este tipo de personalidad son Creadores por naturaleza, van de un proyecto a otro, construyen lo útil y lo superfluo para divertirse, y aprenden de su entorno sobre la marcha.'
+    }else if(result == 'INFJ'){
+      descripcion = 'Los Abogados (INFJ) pueden ser el tipo de personalidad más raro de todos, pero sin duda dejan su huella en el mundo. Idealistas y con principios, no se conforman con ir por la vida sin hacer nada, sino que quieren dar la cara y marcar la diferencia. '
+    }else if(result == 'INFP'){
+      descripcion = 'Aunque puedan parecer tranquilos o discretos, los Mediadores (INFP) tienen una vida interior vibrante y apasionada. Creativos e imaginativos, se pierden alegremente en sueños, inventando todo tipo de historias y conversaciones en sus mentes.'
+    }else if(result == 'INTJ'){
+      descripcion = 'La cima puede ser solitaria. Los Arquitectos (INTJ), uno de los tipos de personalidad menos comunes y más capaces, lo saben muy bien. '
+    }else if(result == 'INTP'){
+      descripcion = 'Los Lógicos (INTP) se enorgullecen de sus perspectivas únicas y su vigoroso intelecto. No pueden evitar descifrar los misterios del universo, lo que explica por qué algunos de los filósofos y científicos más influyentes de todos los tiempos han sido Lógicos.'
+    }else if(result == 'ESFJ'){
+      descripcion = 'Para los Cónsules, la vida es más dulce cuando se comparte con los demás. Las personas con este tipo de personalidad forman la base de muchas comunidades, abriendo sus hogares -y sus corazones- a amigos, seres queridos y vecinos.'
+    }else if(result == 'ESFP'){
+      descripcion = 'Si hay alguien a quien se puede encontrar cantando y bailando espontáneamente, ése es el tipo de personalidad Animador. Los Animadores se dejan llevar por la emoción del momento y quieren que los demás también se sientan así. '
+    }else if(result == 'ESTJ'){
+      descripcion = 'Los Ejecutivos son representantes de la tradición y el orden, y utilizan su comprensión de lo que está bien, lo que está mal y lo que es socialmente aceptable para unir a las familias y las comunidades.'
+    }else if(result == 'ESTP'){
+      descripcion = 'Los Emprendedores siempre tienen un impacto en su entorno inmediato la mejor forma de detectarlos en una fiesta es buscar el remolino de gente que revolotea a su alrededor cuando pasan de un grupo a otro.'
+    }else if(result == 'ENFJ'){
+      descripcion = 'Los Protagonistas (ENFJ) se sienten llamados a servir a un propósito mayor en la vida. Reflexivos e idealistas, estos tipos de personalidad se esfuerzan por tener un impacto positivo en otras personas y en el mundo que les rodea.'
+    }else if(result == 'ENFP'){
+      descripcion = 'Los Activistas (ENFP) son verdaderos espíritus libres: extrovertidos, abiertos de corazón y de mente abierta. Con su enfoque animado y optimista de la vida, destacan entre la multitud.'
+    }else if(result == 'ENTJ'){
+      descripcion = 'Los Comandantes son líderes natos. Las personas con este tipo de personalidad encarnan los dones del carisma y la confianza, y proyectan autoridad de un modo que atrae a multitudes en pos de un objetivo común.'
+    }else if(result == 'ENTP'){
+      descripcion = 'Ingeniosos y audaces, los Innovadores no temen discrepar del estatus quo. De hecho, no les asusta discrepar con casi nada ni con nadie.'
+    }else{
+      Swal.fire('error', 'Tipo no encontrado', 'error')
+    }
+
+    console.log(nombre, result, descripcion)
+
+    Swal.fire({
+      title: "<strong>RESULTADO</strong>",
+      icon: "success",
+      html:`
+      <strong>${nombre}</strong><br>
+      <p>Tu resultado es ${result}</p><br>
+      <p>DESCRIPCION:</p>
+      <p>${descripcion}</p><br>
+      <p>Si quieres conocer mas de sobre tu personalidad al igual que las otras visita
+      <a href="https://www.16personalities.com/es/descripcion-de-los-tipos">Personalidades</a></p>
+      `
+    }
+    );
+    }else{
+      Swal.fire({
+        title: "<strong>ERROR</strong>",
+        icon: "warning",
+        html:`
+        <style type="text/css">
+        .rojo { color: red; }
+        .lista{ text-align: left; }
+        </style>
+        <p class="rojo">Algun dato en tu formulario esta mal, recuerda las especificaciones del test:</p>
+        <ul class="lista">
+          <li class="lista">Solo se pueden usar numeros del 0 al 10.</li>
+          <li class="lista">Los 10 puntos son para repartir en cada par de parametros (si en el lado izquierdo pusiste 7 en el derecho sera 3).</li>
+          <li class="lista">No utilices el numero 5, siempre debe de haber una inclinacion hacia un tipo aunque sea por muy poco.</li>
+        </ul>
+        <p>Tambien recuerde rellenar su Nombre</p>
+        `
+      })
+    }
+  }
   private getGroupValues(groupName: string): number[] {
     const group = this.forms.get(groupName) as FormGroup;
     return Object.values(group.value).map((val: any) => parseInt(val, 10) || 0);

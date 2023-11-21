@@ -77,3 +77,10 @@ table {
     box-sizing: border-box;
   }
 
+  .lista{
+    text-align: left;
+  }
+
+  .rojo{
+    color: red;
+  }
