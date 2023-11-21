@@ -1,0 +1,65 @@
+/* Estilos generales */
+.container {
+    width: 100%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    overflow-x: auto;
+  }
+  
+  .mat-form-field {
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  th.mat-header-cell,
+  td.mat-cell {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  th.mat-header-cell {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  tr.mat-row:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Estilos para los iconos de acciones */
+  .mat-icon.btnEdit,
+  .mat-icon.btnDelete {
+    cursor: pointer;
+    margin-right: 5px;
+    color: #444;
+    font-size: 18px;
+  }
+  
+  .mat-icon.btnDelete {
+    color: #e53935;
+  }
+  .mat-icon.btnEdit{
+    color: blue;
+  }
+  
+  /* Estilos responsivos */
+  @media screen and (max-width: 768px) {
+    table {
+      overflow-x: auto;
+    }
+    
+    th.mat-header-cell,
+    td.mat-cell {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 150px;
+      padding: 8px 10px;
+    }
+  }
+  

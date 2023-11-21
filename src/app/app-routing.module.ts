@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { CatalogovComponent } from './components/catalogov/catalogov.component';
 import { DashboardJungComponent } from './components/dashboard-jung/dashboard-jung.component';
 import { DashboardVarkComponent } from './components/dashboard-vark/dashboard-vark.component';
 import { LogginComponent } from './components/loggin/loggin.component';
@@ -25,7 +26,7 @@ const routes: Routes = [
   {path: "tablaV", component: DashboardVarkComponent},
   {path: "resultados", component: ResultadosComponent},
   {path: "resultadosVark", component: ResultadosVarkComponent},
-
+  {path: "catalogoV", component: CatalogovComponent}
 
 ];
 
