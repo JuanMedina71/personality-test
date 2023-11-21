@@ -3,21 +3,21 @@
     <div mat-dialog-content>
         <mat-form-field>
             <mat-label>Nombre</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="data.nombre">
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>Tipo Predeterminado</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="data.tipoPredominante">
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>Descripcion</mat-label>
-            <textarea matInput></textarea>
+            <textarea matInput [(ngModel)]="data.descripcionResultado"></textarea>
           </mat-form-field>
           <mat-dialog-actions align="end">
             <button mat-button mat-dialog-close>Cancel</button>
-            <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Guardar</button>
-          </mat-dialog-actions>
+            <button mat-button [mat-dialog-close]="data" (click)="guardarCambios()" cdkFocusInitial>Guardar</button>
+        </mat-dialog-actions>
     </div>
 </div>
