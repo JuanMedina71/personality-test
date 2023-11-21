@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
+import { Firestore, addDoc, collection } from '@angular/fire/firestore';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 export class TestComponent implements OnInit{
   forms!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private firestore: Firestore) {
     
   }
 
@@ -272,6 +272,8 @@ export class TestComponent implements OnInit{
 
     console.log(nombre, result, descripcion)
 
+    this.guardarResultadoEnFirestore(nombre, result, descripcion);
+
     Swal.fire({
       title: "<strong>RESULTADO</strong>",
       icon: "success",
@@ -312,5 +314,26 @@ export class TestComponent implements OnInit{
 
   private sumValues(values: number[]): number {
     return values.reduce((acc, curr) => acc + curr, 0);
+  }
+
+  private async guardarResultadoEnFirestore(nombre: string, result: string, descripcion: string) {
+    try {
+      const resultadosCollection = collection(this.firestore, 'testP');
+
+      await addDoc(resultadosCollection, {
+        nombre: nombre,
+        result: result,
+        descripcion: descripcion,
+      });
+
+      // Swal.fire({
+      //   title: '<strong>RESULTADO</strong>',
+      //   icon: 'success',
+      //   html: `... Tu resultado es ${result} ...`,
+      // });
+    } catch (error){
+      console.error('Error al guardar en firestore', error);
+      Swal.fire('error', 'Hubo un error al guardar los resultados', 'error');
+    }
   }
 }
