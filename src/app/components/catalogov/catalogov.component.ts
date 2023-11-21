@@ -86,7 +86,6 @@ export class CatalogovComponent {
       try {
         await deleteDoc(documentRef);
         console.log('Documento eliminado correctamente');
-        window.location.reload();
       } catch (error) {
         console.error('Error al eliminar el documento:', error);
         throw error;

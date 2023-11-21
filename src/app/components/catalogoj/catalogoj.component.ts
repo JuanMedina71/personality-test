@@ -73,7 +73,6 @@ export class CatalogojComponent {
       try {
         await updateDoc(documentRef, newData);
         console.log('Documento actualizado correctamente');
-        window.location.reload();
       } catch (error) {
         console.error('Error al actualizar el documento:', error);
         throw error;
@@ -88,7 +87,6 @@ export class CatalogojComponent {
       try {
         await deleteDoc(documentRef);
         console.log('Documento eliminado correctamente');
-        window.location.reload();
       } catch (error) {
         console.error('Error al eliminar el documento:', error);
         throw error;
