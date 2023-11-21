@@ -1,29 +1,30 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" routerLink="/public">InsightIQ</a>
-      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-              <li class="nav-item">
-                  <a class="nav-link" routerLink="/loggin" aria-current="page">Catalogo JungMyers<span class="visually-hidden">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/loggin" aria-current="page">Catalago VARK<span class="visually-hidden">(current)</span></a>
+  <div class="container">
+    <a class="navbar-brand" routerLink="/public">InsightIQ</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/adminPanel" aria-current="page">Catalogo JungMyers<span class="visually-hidden">(current)</span></a>
             </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/dashboards" aria-current="page">Dashboards VARK<span class="visually-hidden">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" routerLink="/dashboards" aria-current="page">Dashboards Jung<span class="visually-hidden">(current)</span></a>
-              </li>
-          </ul>
-
-        </div>
-      
-    </div>
+            <li class="nav-item">
+              <a class="nav-link " routerLink="/catalogoV" aria-current="page">Catalago VARK<span class="visually-hidden">(current)</span></a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link " routerLink="/tablaV" aria-current="page">Dashboards VARK<span class="visually-hidden">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/tablaJ" aria-current="page">Dashboards Jung<span class="visually-hidden">(current)</span></a>
+            </li>
+        </ul>
+      </div>
+      <button mat-icon-button color="accent" routerLink="/public" aria-label="Example icon button with a menu icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+  </div>
 </nav>
 
 <div>

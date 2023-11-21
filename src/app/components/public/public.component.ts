@@ -19,12 +19,18 @@ export class PublicComponent {
         this.router.navigate(['/loggin']);
         break;
       case 'vark':
-        this.router.navigate(['']);
+        this.router.navigate(['/VARK']);
         break;
       case 'jung':
         this.router.navigate(['/testP']);
         break;
-    }
+      case 'resultJ':
+          this.router.navigate(['/resultados']);
+        break;
+      case 'resultV':
+          this.router.navigate(['/resultadosVark']);
+        break;
+      }
   }
 
   enviarDuda() {

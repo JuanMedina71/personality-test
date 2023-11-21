@@ -31,6 +31,13 @@
   .public-card.card-jung {
     background-image: url('https://www.enae.es/sites/default/files/imagen-blog/Gestione%20con%20%C3%A9xito%20a%20sus%20clientes_900x500br.jpg');
   }
+  .public-card.card-resultJ {
+    background-image: url('https://www.idrlabs.com/misc_pictures/jung_personality_test.jpg');
+  }
+  .public-card.card-resultV {
+    background-image: url('https://gesvin.files.wordpress.com/2015/03/descubriendoestilosaprendizajeelcuestionariovark-ebook-bloggesvin.jpg?w=640');
+  }
+
 
   .admin-text {
     display: flex;
