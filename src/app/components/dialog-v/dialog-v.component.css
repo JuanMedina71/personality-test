@@ -1,64 +1,10 @@
-/* Estilos para el diálogo */
 .container {
-    width: 400px; /* Ancho del diálogo */
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  h1.mat-dialog-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  mat-form-field {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  mat-label {
-    font-size: 16px;
-    color: #333;
-  }
-  
-  mat-dialog-actions {
-    justify-content: flex-end;
-    margin-top: 20px;
-  }
-  
-  /* Ajustes para los botones */
-  button {
-    margin-left: 8px;
-  }
-  
-  /* Estilos para los inputs y textarea */
-  input.mat-input-element,
-  textarea.mat-input-element {
-    font-size: 16px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  /* Hover y focus para inputs y textarea */
-  input.mat-input-element:focus,
-  textarea.mat-input-element:focus,
-  input.mat-input-element:hover,
-  textarea.mat-input-element:hover {
-    outline: none;
-    border-color: #5c6bc0;
-    /* Cambiar color al hacer hover o focus */
-  }
-  
-  /* Ajustes para el textarea */
-  textarea.mat-input-element {
-    resize: none; /* Deshabilitar el redimensionamiento manual */
-    min-height: 150px; /* Altura mínima */
-    height: auto; /* Altura automática según el contenido */
-    overflow-y: hidden; /* Ocultar el desplazamiento vertical */
-    max-width: 100%; /* Ajustar el ancho automáticamente */
-    width: calc(100% - 24px); /* Considerar el padding del textarea */
-    line-height: 1.5; /* Ajustar el espacio entre líneas */
-  }
-  
+  width: 300px; /* Ajusta el ancho del contenedor según sea necesario */
+  padding: 20px;
+}
+
+.custom-textarea {
+  min-height: 100px; /* Altura mínima del textarea */
+  width: 100%; /* Ancho del textarea al 100% del contenedor */
+  resize: vertical; /* Permite redimensionar verticalmente el textarea */
+}

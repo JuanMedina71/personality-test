@@ -1,0 +1,10 @@
+.custom-container {
+    max-width: 400px; /* Ajusta el ancho del contenedor según sea necesario */
+    padding: 20px;
+}
+
+.custom-textarea {
+    min-height: 100px; /* Altura mínima del textarea */
+    width: 100%; /* Ancho del textarea al 100% del contenedor */
+    resize: vertical; /* Permite redimensionar verticalmente el textarea */
+}
