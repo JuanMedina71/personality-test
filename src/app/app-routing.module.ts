@@ -6,6 +6,7 @@ import { PublicComponent } from './components/public/public.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TestComponent } from './components/test/test.component';
 import { VerificationComponent } from './components/verification/verification.component';
+import { DashboardJungComponent } from './components/dashboard-jung/dashboard-jung.component';
 
 const routes: Routes = [
   { path: "", redirectTo:"public", pathMatch: "full"},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "public", component: PublicComponent},
   { path: "adminPanel", component: AdminPanelComponent},
   {path: "testP", component: TestComponent},
+  {path: "dashbordJ", component: DashboardJungComponent}
 
 ];
 

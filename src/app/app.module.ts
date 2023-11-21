@@ -29,7 +29,8 @@ import { TestComponent } from './components/test/test.component';
 import { VarkComponent } from './components/vark/vark.component';
 import { VerificationComponent } from './components/verification/verification.component';
 import { DashboardJungComponent } from './components/dashboard-jung/dashboard-jung.component';
-
+import { CatalogojComponent } from './components/catalogoj/catalogoj.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { DashboardJungComponent } from './components/dashboard-jung/dashboard-ju
     PublicComponent,
     AdminPanelComponent,
     DashboardJungComponent,
+    CatalogojComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +63,7 @@ import { DashboardJungComponent } from './components/dashboard-jung/dashboard-ju
     MatSidenavModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    MatDialogModule,
     provideFirebaseApp(() => initializeApp({"projectId":"insightiq-8a302","appId":"1:1061784780582:web:43736fd73e766f5af70be7","storageBucket":"insightiq-8a302.appspot.com","apiKey":"AIzaSyAExb7g-pbihQqNGNSqZa9m8PS40N-Cawg","authDomain":"insightiq-8a302.firebaseapp.com","messagingSenderId":"1061784780582"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
