@@ -1,12 +1,20 @@
 .public-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin-top: 20px;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 20px;
+}
+/* Modifica el margen inferior del primer .public-container */
+.public-container:first-child {
+  margin-bottom: 0; /* Elimina el margen inferior del primer contenedor */
+}
+
+/* Añade un margen superior al segundo .public-container */
+.public-container:last-child {
+  margin-top: -500px; /* Valor negativo para superponer ligeramente con el contenedor anterior */
+}
+
   .public-card {
     width: 250px;
     height: 150px;

@@ -39,6 +39,7 @@ import { TestComponent } from './components/test/test.component';
 import { VarkComponent } from './components/vark/vark.component';
 import { VerificationComponent } from './components/verification/verification.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
