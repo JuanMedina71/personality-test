@@ -287,6 +287,7 @@ export class TestComponent implements OnInit{
       `
     }
     );
+    this.resetForm()
     }else{
       Swal.fire({
         title: "<strong>ERROR</strong>",
@@ -335,5 +336,9 @@ export class TestComponent implements OnInit{
       console.error('Error al guardar en firestore', error);
       Swal.fire('error', 'Hubo un error al guardar los resultados', 'error');
     }
+  }
+  
+  resetForm() {
+    this.forms.reset();
   }
 }
