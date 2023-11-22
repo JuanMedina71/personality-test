@@ -86,7 +86,7 @@ export class CatalogovComponent {
       try {
         await deleteDoc(documentRef);
         console.log('Documento eliminado correctamente');
-        this.ngOnInit
+        this.ngOnInit()
       } catch (error) {
         console.error('Error al eliminar el documento:', error);
         throw error;
