@@ -26,8 +26,9 @@ const routes: Routes = [
   {path: "tablaV", component: DashboardVarkComponent},
   {path: "resultados", component: ResultadosComponent},
   {path: "resultadosVark", component: ResultadosVarkComponent},
-  {path: "catalogoV", component: CatalogovComponent}
-
+  {path: "catalogoV", component: CatalogovComponent},
+  
+  {path: "**", redirectTo: "public", pathMatch: "full"}
 ];
 
 @NgModule({
