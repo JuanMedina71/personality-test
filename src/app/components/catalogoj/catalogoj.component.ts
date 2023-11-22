@@ -65,7 +65,6 @@ export class CatalogojComponent {
     });
   }
 
-
   async actualizarDocumentoPorNombre(nombre: string, newData: any): Promise<void> {
     const querySnapshot = await getDocs(query(collection(this.firestore, 'testP'), where('nombre', '==', nombre)));
     querySnapshot.forEach(async (docSnapshot) => {
@@ -87,6 +86,7 @@ export class CatalogojComponent {
       try {
         await deleteDoc(documentRef);
         console.log('Documento eliminado correctamente');
+        this.ngOnInit
         window.location.reload()
       } catch (error) {
         console.error('Error al eliminar el documento:', error);
